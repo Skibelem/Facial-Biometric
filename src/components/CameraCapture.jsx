@@ -29,7 +29,7 @@ export default function CameraCapture({
   return (
     <div className="space-y-4">
       {/* Video Viewport Container */}
-      <div className="relative aspect-video max-w-lg mx-auto rounded-2xl bg-slate-950 border border-slate-800 overflow-hidden shadow-2xl flex items-center justify-center">
+      <div className="relative aspect-video max-w-lg mx-auto rounded-2xl bg-slate-900/90 border border-slate-700/80 overflow-hidden shadow-2xl flex items-center justify-center">
         <video
           ref={videoRef}
           playsInline
@@ -48,12 +48,12 @@ export default function CameraCapture({
         {/* Offline / Placeholder View */}
         {!isStreaming && (
           <div className="text-center p-6 space-y-3">
-            <div className="w-14 h-14 rounded-2xl bg-slate-900 border border-slate-800 flex items-center justify-center mx-auto text-slate-500">
+            <div className="w-14 h-14 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center mx-auto text-slate-400">
               <CameraOff className="w-7 h-7" />
             </div>
             <div className="space-y-1">
-              <p className="text-sm font-semibold text-slate-300">Camera Feed Inactive</p>
-              <p className="text-xs text-slate-500">Click below to grant permission and activate webcam</p>
+              <p className="text-sm font-semibold text-slate-200">Camera Feed Inactive</p>
+              <p className="text-xs text-slate-400">Click below to grant permission and activate webcam</p>
             </div>
           </div>
         )}
@@ -81,7 +81,7 @@ export default function CameraCapture({
 
       {/* Camera Permission / Access Error Alert */}
       {cameraError && (
-        <div className="p-3 rounded-xl bg-red-500/10 border border-red-500/30 flex items-start gap-2.5 text-red-400 text-xs max-w-lg mx-auto">
+        <div className="p-3 rounded-xl bg-red-50 border border-red-200 flex items-start gap-2.5 text-red-600 text-xs max-w-lg mx-auto">
           <AlertTriangle className="w-4 h-4 shrink-0 mt-0.5" />
           <span>{cameraError}</span>
         </div>
@@ -93,7 +93,7 @@ export default function CameraCapture({
           <button
             type="button"
             onClick={onStartCamera}
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold text-sm transition-all shadow-lg shadow-cyan-500/20 cursor-pointer"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-semibold text-sm transition-all shadow-md shadow-cyan-600/20 cursor-pointer"
           >
             <Camera className="w-4 h-4" />
             Activate Camera
@@ -104,7 +104,7 @@ export default function CameraCapture({
               type="button"
               onClick={onCapture}
               disabled={isProcessing}
-              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-semibold text-sm transition-all shadow-lg shadow-cyan-500/20 cursor-pointer disabled:opacity-50"
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-semibold text-sm transition-all shadow-md shadow-cyan-600/20 cursor-pointer disabled:opacity-50"
             >
               <Sparkles className="w-4 h-4" />
               {captureButtonText}
@@ -112,7 +112,7 @@ export default function CameraCapture({
             <button
               type="button"
               onClick={onStopCamera}
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium text-sm border border-slate-700 transition-all cursor-pointer"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-800 font-medium text-sm border border-slate-300 transition-all cursor-pointer"
             >
               Stop Camera
             </button>

@@ -160,14 +160,14 @@ export default function FacialLoginPage() {
   return (
     <div className="max-w-2xl mx-auto space-y-6">
       {/* Title Header */}
-      <div className="flex items-center justify-between border-b border-slate-800 pb-5">
+      <div className="flex items-center justify-between border-b border-slate-200 pb-5">
         <div className="flex items-center gap-3">
-          <div className="p-3 rounded-2xl bg-gradient-to-tr from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-500/20">
+          <div className="p-3 rounded-2xl bg-gradient-to-tr from-cyan-600 to-blue-600 text-white shadow-md shadow-cyan-600/20">
             <Camera className="w-6 h-6" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-slate-100">Facial Biometric Login</h1>
-            <p className="text-xs text-slate-400">
+            <h1 className="text-2xl font-bold text-slate-900">Facial Biometric Login</h1>
+            <p className="text-xs text-slate-500">
               Facial Biometric Identity Verification
             </p>
           </div>
@@ -175,34 +175,34 @@ export default function FacialLoginPage() {
 
         <Link
           to="/login"
-          className="px-3.5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-xs font-medium text-slate-300 transition-all flex items-center gap-1.5"
+          className="px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-200 text-xs font-medium text-slate-700 transition-all flex items-center gap-1.5"
         >
-          <Lock className="w-3.5 h-3.5 text-cyan-400" />
+          <Lock className="w-3.5 h-3.5 text-cyan-600" />
           Password Login
         </Link>
       </div>
 
       {/* Model Loader Warning */}
       {!modelsReady && !modelLoadingError && (
-        <div className="p-4 rounded-xl bg-cyan-950/40 border border-cyan-500/20 flex items-center gap-3 text-cyan-300 text-xs font-mono">
-          <Loader2 className="w-4 h-4 animate-spin shrink-0 text-cyan-400" />
+        <div className="p-4 rounded-xl bg-cyan-50 border border-cyan-200 flex items-center gap-3 text-cyan-800 text-xs font-mono">
+          <Loader2 className="w-4 h-4 animate-spin shrink-0 text-cyan-600" />
           <span>Initializing facial recognition security module...</span>
         </div>
       )}
 
       {modelLoadingError && (
-        <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/30 flex items-center gap-3 text-red-400 text-xs">
+        <div className="p-4 rounded-xl bg-red-50 border border-red-200 flex items-center gap-3 text-red-600 text-xs">
           <AlertCircle className="w-5 h-5 shrink-0" />
           <span>{modelLoadingError}</span>
         </div>
       )}
 
       {/* Threshold Controller Bar */}
-      <div className="p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex items-center justify-between text-xs text-slate-300">
+      <div className="p-4 rounded-xl bg-white border border-slate-200/80 flex items-center justify-between text-xs text-slate-700 shadow-sm">
         <div className="flex items-center gap-2">
-          <Settings className="w-4 h-4 text-cyan-400" />
+          <Settings className="w-4 h-4 text-cyan-600" />
           <span>Match Threshold Sensitivity:</span>
-          <span className="font-mono text-cyan-400 font-semibold">{threshold}</span>
+          <span className="font-mono text-cyan-600 font-bold">{threshold}</span>
         </div>
         <input
           type="range"
@@ -211,13 +211,13 @@ export default function FacialLoginPage() {
           step="0.05"
           value={threshold}
           onChange={(e) => setThreshold(parseFloat(e.target.value))}
-          className="accent-cyan-500 cursor-pointer"
+          className="accent-cyan-600 cursor-pointer"
         />
       </div>
 
       {/* Status Messages */}
       {errorMessage && (
-        <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/30 flex items-start gap-3 text-red-400 text-xs">
+        <div className="p-4 rounded-xl bg-red-50 border border-red-200 flex items-start gap-3 text-red-600 text-xs">
           <AlertCircle className="w-5 h-5 shrink-0 mt-0.5" />
           <div>
             <div className="font-semibold">Authentication Notice</div>
@@ -227,17 +227,17 @@ export default function FacialLoginPage() {
       )}
 
       {statusMessage && !errorMessage && (
-        <div className="p-4 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center gap-3 text-cyan-300 text-xs font-mono">
-          <Loader2 className={`w-4 h-4 text-cyan-400 ${isProcessing ? 'animate-spin' : 'hidden'}`} />
+        <div className="p-4 rounded-xl bg-cyan-50 border border-cyan-200 flex items-center gap-3 text-cyan-800 text-xs font-mono">
+          <Loader2 className={`w-4 h-4 text-cyan-600 ${isProcessing ? 'animate-spin' : 'hidden'}`} />
           <span>{statusMessage}</span>
         </div>
       )}
 
       {/* Main Facial Login Interface */}
       {!loginSuccess ? (
-        <div className="p-6 md:p-8 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-xl space-y-6">
-          <div className="text-xs text-slate-400 space-y-1 border-b border-slate-800/80 pb-3">
-            <p className="font-semibold text-slate-300">Facial Authentication Instructions:</p>
+        <div className="p-6 md:p-8 rounded-2xl bg-white border border-slate-200/80 shadow-xl space-y-6">
+          <div className="text-xs text-slate-600 space-y-1 border-b border-slate-100 pb-3">
+            <p className="font-semibold text-slate-800">Facial Authentication Instructions:</p>
             <p>Position your face in the camera viewport and click Authenticate with Face.</p>
           </div>
 
@@ -254,22 +254,22 @@ export default function FacialLoginPage() {
         </div>
       ) : (
         /* Login Success Card */
-        <div className="p-8 rounded-2xl bg-slate-900 border border-emerald-500/30 text-center space-y-6 shadow-2xl">
-          <div className="w-16 h-16 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center justify-center mx-auto">
+        <div className="p-8 rounded-2xl bg-white border border-emerald-200 text-center space-y-6 shadow-xl">
+          <div className="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 flex items-center justify-center mx-auto">
             <ShieldCheck className="w-8 h-8" />
           </div>
 
           <div className="space-y-2">
-            <h2 className="text-2xl font-bold text-slate-100">Identity Verified</h2>
-            <p className="text-sm text-emerald-400 font-medium">Welcome back, {loginSuccess.full_name}!</p>
-            <p className="text-xs text-slate-400">
+            <h2 className="text-2xl font-bold text-slate-900">Identity Verified</h2>
+            <p className="text-sm text-emerald-600 font-semibold">Welcome back, {loginSuccess.full_name}!</p>
+            <p className="text-xs text-slate-500">
               Euclidean Distance: {loginSuccess.distance} (Threshold: {loginSuccess.threshold})
             </p>
           </div>
 
           <button
             onClick={() => navigate('/dashboard')}
-            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold text-sm transition-all cursor-pointer shadow-lg shadow-cyan-500/20"
+            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-semibold text-sm transition-all cursor-pointer shadow-md shadow-cyan-600/20"
           >
             Redirecting to Dashboard...
             <ArrowRight className="w-4 h-4" />

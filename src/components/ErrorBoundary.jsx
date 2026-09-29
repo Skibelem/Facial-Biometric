@@ -27,8 +27,8 @@ export default class ErrorBoundary extends React.Component {
   render() {
     if (this.state.hasError) {
       return (
-        <div className="min-h-screen bg-slate-950 flex items-center justify-center p-4">
-          <div className="max-w-md w-full rounded-2xl bg-slate-900 border border-red-500/30 p-6 shadow-2xl">
+        <div className="min-h-screen bg-gradient-to-br from-[#1a2130] via-[#161b26] to-[#131722] flex items-center justify-center p-4">
+          <div className="max-w-md w-full rounded-2xl bg-slate-800/90 border border-red-500/30 p-6 shadow-2xl">
             <div className="w-12 h-12 rounded-full bg-red-500/10 text-red-400 border border-red-500/20 flex items-center justify-center mb-4">
               <AlertTriangle className="w-6 h-6" />
             </div>
@@ -37,7 +37,7 @@ export default class ErrorBoundary extends React.Component {
               An unexpected error occurred in the application layer.
             </p>
             {this.state.error && (
-              <pre className="mt-3 p-3 rounded-lg bg-slate-950 border border-slate-800 text-xs font-mono text-red-300 overflow-x-auto">
+              <pre className="mt-3 p-3 rounded-lg bg-slate-900 border border-slate-700 text-xs font-mono text-red-300 overflow-x-auto">
                 {this.state.error.toString()}
               </pre>
             )}

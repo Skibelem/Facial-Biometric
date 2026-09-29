@@ -10,7 +10,7 @@ import Footer from '../components/Footer';
  */
 export default function MainLayout() {
   return (
-    <div className="min-h-screen flex flex-col bg-slate-950 text-slate-100">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-[#f8fafc] via-[#f1f5f9] to-[#e2e8f0] text-slate-900">
       <Navbar />
 
       {/* Main Content Area */}

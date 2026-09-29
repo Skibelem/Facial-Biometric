@@ -97,20 +97,20 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="max-w-md mx-auto my-8 p-8 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-2xl space-y-6">
-      <div className="flex items-center gap-3 border-b border-slate-800 pb-4">
-        <div className="p-2.5 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+    <div className="max-w-md mx-auto my-8 p-8 rounded-2xl bg-white border border-slate-200/80 shadow-xl space-y-6">
+      <div className="flex items-center gap-3 border-b border-slate-200 pb-4">
+        <div className="p-2.5 rounded-xl bg-cyan-50 text-cyan-600 border border-cyan-200">
           <UserCheck className="w-6 h-6" />
         </div>
         <div>
-          <h2 className="text-xl font-bold text-slate-100">Create Account</h2>
-          <p className="text-xs text-slate-400">User Registration Module</p>
+          <h2 className="text-xl font-bold text-slate-900">Create Account</h2>
+          <p className="text-xs text-slate-500">User Registration Module</p>
         </div>
       </div>
 
       {/* Error Alert */}
       {(validationError || serverError) && (
-        <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/30 flex items-start gap-3 text-red-400 text-xs">
+        <div className="p-4 rounded-xl bg-red-50 border border-red-200 flex items-start gap-3 text-red-600 text-xs">
           <AlertCircle className="w-5 h-5 shrink-0 mt-0.5" />
           <div>
             <div className="font-semibold">Registration Notice</div>
@@ -121,7 +121,7 @@ export default function RegisterPage() {
 
       {/* Email Confirmation Success Alert */}
       {successNotice && (
-        <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-start gap-3 text-emerald-400 text-xs">
+        <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200 flex items-start gap-3 text-emerald-700 text-xs">
           <CheckCircle2 className="w-5 h-5 shrink-0 mt-0.5" />
           <div>
             <div className="font-semibold">Registration Pending Confirmation</div>
@@ -132,64 +132,64 @@ export default function RegisterPage() {
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label className="block text-xs font-medium text-slate-300 mb-1">Full Name</label>
+          <label className="block text-xs font-medium text-slate-700 mb-1">Full Name</label>
           <div className="relative">
-            <User className="w-4 h-4 absolute left-3 top-3 text-slate-500" />
+            <User className="w-4 h-4 absolute left-3 top-3 text-slate-400" />
             <input
               type="text"
               name="fullName"
               value={formData.fullName}
               onChange={handleChange}
               placeholder="e.g. Jane Doe"
-              className="w-full pl-9 pr-3 py-2 rounded-xl bg-slate-950 border border-slate-800 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 text-sm text-slate-100 placeholder-slate-600 transition-colors"
+              className="w-full pl-9 pr-3 py-2 rounded-xl bg-slate-50 border border-slate-300 focus:border-cyan-600 focus:bg-white focus:ring-1 focus:ring-cyan-600 text-sm text-slate-900 placeholder-slate-400 transition-colors"
               disabled={isSubmitting}
             />
           </div>
         </div>
 
         <div>
-          <label className="block text-xs font-medium text-slate-300 mb-1">Email Address</label>
+          <label className="block text-xs font-medium text-slate-700 mb-1">Email Address</label>
           <div className="relative">
-            <Mail className="w-4 h-4 absolute left-3 top-3 text-slate-500" />
+            <Mail className="w-4 h-4 absolute left-3 top-3 text-slate-400" />
             <input
               type="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
               placeholder="user@example.com"
-              className="w-full pl-9 pr-3 py-2 rounded-xl bg-slate-950 border border-slate-800 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 text-sm text-slate-100 placeholder-slate-600 transition-colors"
+              className="w-full pl-9 pr-3 py-2 rounded-xl bg-slate-50 border border-slate-300 focus:border-cyan-600 focus:bg-white focus:ring-1 focus:ring-cyan-600 text-sm text-slate-900 placeholder-slate-400 transition-colors"
               disabled={isSubmitting}
             />
           </div>
         </div>
 
         <div>
-          <label className="block text-xs font-medium text-slate-300 mb-1">Password</label>
+          <label className="block text-xs font-medium text-slate-700 mb-1">Password</label>
           <div className="relative">
-            <Lock className="w-4 h-4 absolute left-3 top-3 text-slate-500" />
+            <Lock className="w-4 h-4 absolute left-3 top-3 text-slate-400" />
             <input
               type="password"
               name="password"
               value={formData.password}
               onChange={handleChange}
               placeholder="••••••••"
-              className="w-full pl-9 pr-3 py-2 rounded-xl bg-slate-950 border border-slate-800 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 text-sm text-slate-100 placeholder-slate-600 transition-colors"
+              className="w-full pl-9 pr-3 py-2 rounded-xl bg-slate-50 border border-slate-300 focus:border-cyan-600 focus:bg-white focus:ring-1 focus:ring-cyan-600 text-sm text-slate-900 placeholder-slate-400 transition-colors"
               disabled={isSubmitting}
             />
           </div>
         </div>
 
         <div>
-          <label className="block text-xs font-medium text-slate-300 mb-1">Confirm Password</label>
+          <label className="block text-xs font-medium text-slate-700 mb-1">Confirm Password</label>
           <div className="relative">
-            <Lock className="w-4 h-4 absolute left-3 top-3 text-slate-500" />
+            <Lock className="w-4 h-4 absolute left-3 top-3 text-slate-400" />
             <input
               type="password"
               name="confirmPassword"
               value={formData.confirmPassword}
               onChange={handleChange}
               placeholder="••••••••"
-              className="w-full pl-9 pr-3 py-2 rounded-xl bg-slate-950 border border-slate-800 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 text-sm text-slate-100 placeholder-slate-600 transition-colors"
+              className="w-full pl-9 pr-3 py-2 rounded-xl bg-slate-50 border border-slate-300 focus:border-cyan-600 focus:bg-white focus:ring-1 focus:ring-cyan-600 text-sm text-slate-900 placeholder-slate-400 transition-colors"
               disabled={isSubmitting}
             />
           </div>
@@ -198,7 +198,7 @@ export default function RegisterPage() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full py-2.5 px-4 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold text-sm transition-all shadow-lg shadow-cyan-500/20 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+          className="w-full py-2.5 px-4 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-semibold text-sm transition-all shadow-md shadow-cyan-600/20 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
         >
           {isSubmitting ? (
             <>
@@ -211,9 +211,9 @@ export default function RegisterPage() {
         </button>
       </form>
 
-      <div className="text-center pt-2 border-t border-slate-800/80 text-xs text-slate-400">
+      <div className="text-center pt-2 border-t border-slate-200 text-xs text-slate-500">
         Already have an account?{' '}
-        <Link to="/login" className="text-cyan-400 font-medium hover:underline">
+        <Link to="/login" className="text-cyan-600 font-semibold hover:underline">
           Sign In
         </Link>
       </div>

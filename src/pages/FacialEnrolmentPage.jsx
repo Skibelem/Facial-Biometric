@@ -122,20 +122,20 @@ export default function FacialEnrolmentPage() {
   return (
     <div className="max-w-2xl mx-auto space-y-6">
       {/* Title Banner */}
-      <div className="flex items-center justify-between border-b border-slate-800 pb-5">
+      <div className="flex items-center justify-between border-b border-slate-200 pb-5">
         <div className="flex items-center gap-3">
-          <div className="p-3 rounded-2xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+          <div className="p-3 rounded-2xl bg-cyan-50 text-cyan-600 border border-cyan-200">
             <Camera className="w-6 h-6" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-slate-100">Facial Enrolment</h1>
-            <p className="text-xs text-slate-400">
+            <h1 className="text-2xl font-bold text-slate-900">Facial Enrolment</h1>
+            <p className="text-xs text-slate-500">
               Secure biometric facial enrolment module
             </p>
           </div>
         </div>
 
-        <span className="px-3 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-xs font-mono text-cyan-400 flex items-center gap-1.5">
+        <span className="px-3 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-xs font-mono text-cyan-700 flex items-center gap-1.5 font-semibold">
           <Sparkles className="w-3.5 h-3.5" />
           Biometric Capture Active
         </span>
@@ -143,14 +143,14 @@ export default function FacialEnrolmentPage() {
 
       {/* Model Loading Status Indicator */}
       {!modelsReady && !modelLoadingError && (
-        <div className="p-4 rounded-xl bg-cyan-950/40 border border-cyan-500/20 flex items-center gap-3 text-cyan-300 text-xs font-mono">
-          <Loader2 className="w-4 h-4 animate-spin shrink-0 text-cyan-400" />
+        <div className="p-4 rounded-xl bg-cyan-50 border border-cyan-200 flex items-center gap-3 text-cyan-800 text-xs font-mono">
+          <Loader2 className="w-4 h-4 animate-spin shrink-0 text-cyan-600" />
           <span>Initializing facial recognition security module...</span>
         </div>
       )}
 
       {modelLoadingError && (
-        <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/30 flex items-center gap-3 text-red-400 text-xs">
+        <div className="p-4 rounded-xl bg-red-50 border border-red-200 flex items-center gap-3 text-red-600 text-xs">
           <AlertCircle className="w-5 h-5 shrink-0" />
           <span>{modelLoadingError}</span>
         </div>
@@ -158,7 +158,7 @@ export default function FacialEnrolmentPage() {
 
       {/* Status Alert Banners */}
       {errorMessage && (
-        <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/30 flex items-start gap-3 text-red-400 text-xs">
+        <div className="p-4 rounded-xl bg-red-50 border border-red-200 flex items-start gap-3 text-red-600 text-xs">
           <AlertCircle className="w-5 h-5 shrink-0 mt-0.5" />
           <div>
             <div className="font-semibold">Enrolment Notice</div>
@@ -168,17 +168,17 @@ export default function FacialEnrolmentPage() {
       )}
 
       {statusMessage && !errorMessage && (
-        <div className="p-4 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center gap-3 text-cyan-300 text-xs font-mono">
-          <Loader2 className={`w-4 h-4 text-cyan-400 ${isProcessing ? 'animate-spin' : 'hidden'}`} />
+        <div className="p-4 rounded-xl bg-cyan-50 border border-cyan-200 flex items-center gap-3 text-cyan-800 text-xs font-mono">
+          <Loader2 className={`w-4 h-4 text-cyan-600 ${isProcessing ? 'animate-spin' : 'hidden'}`} />
           <span>{statusMessage}</span>
         </div>
       )}
 
       {/* Main Enrolment Interface */}
       {!enrolmentComplete ? (
-        <div className="p-6 md:p-8 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-xl space-y-6">
-          <div className="text-xs text-slate-400 space-y-1">
-            <p className="font-semibold text-slate-300">Instructions for Facial Enrolment:</p>
+        <div className="p-6 md:p-8 rounded-2xl bg-white border border-slate-200/80 shadow-xl space-y-6">
+          <div className="text-xs text-slate-600 space-y-1">
+            <p className="font-semibold text-slate-800">Instructions for Facial Enrolment:</p>
             <ul className="list-disc list-inside space-y-0.5">
               <li>Position your face clearly inside the center of the video frame.</li>
               <li>Ensure environment has adequate lighting with no heavy shadows.</li>
@@ -200,14 +200,14 @@ export default function FacialEnrolmentPage() {
         </div>
       ) : (
         /* Enrolment Completion Card */
-        <div className="p-8 rounded-2xl bg-slate-900 border border-emerald-500/30 text-center space-y-6 shadow-2xl">
-          <div className="w-16 h-16 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center justify-center mx-auto">
+        <div className="p-8 rounded-2xl bg-white border border-emerald-200 text-center space-y-6 shadow-xl">
+          <div className="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 flex items-center justify-center mx-auto">
             <CheckCircle2 className="w-8 h-8" />
           </div>
 
           <div className="space-y-2">
-            <h2 className="text-xl font-bold text-slate-100">Facial Enrolment Successful</h2>
-            <p className="text-xs text-slate-400 max-w-md mx-auto">
+            <h2 className="text-xl font-bold text-slate-900">Facial Enrolment Successful</h2>
+            <p className="text-xs text-slate-600 max-w-md mx-auto">
               Your 128D facial feature vector has been generated and stored in PostgreSQL, and your enrolment photo is stored in private storage.
             </p>
           </div>
@@ -215,7 +215,7 @@ export default function FacialEnrolmentPage() {
           <div className="flex justify-center gap-4">
             <button
               onClick={() => navigate('/dashboard')}
-              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold text-sm transition-all cursor-pointer shadow-lg shadow-cyan-500/20"
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-semibold text-sm transition-all cursor-pointer shadow-md shadow-cyan-600/20"
             >
               Return to Dashboard
               <ArrowRight className="w-4 h-4" />
